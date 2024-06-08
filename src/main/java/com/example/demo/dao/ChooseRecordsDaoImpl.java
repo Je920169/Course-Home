@@ -93,13 +93,13 @@ public class ChooseRecordsDaoImpl implements ChooseRecordsDao {
 
 	@Override
 	public List<ChooseRecordsDto> findAllChooseRecords() {
-	    String sql = "SELECT"
-	    		+ "c.id, c.studentid, c.courseid, c.credits, c.choosetime, c.action,"
-	    		+ "u.id, u.subject, u.teacherid, u.coursetype, u.place, u.time, u.quota, u.credits as test, u.remark,"
-	    		+ "s.id, s.name"
-	    		+ "FROM"
-	    		+ "choose_records c"
-	    		+ "left join courses u on c.courseid = u.id"
+	    String sql = "SELECT "
+	    		+ "c.id, c.studentid, c.courseid, c.credits, c.choosetime, c.action, "
+	    		+ "   u.id, u.subject, u.teacherid, u.coursetype, u.place, u.time, u.quota, u.credits as test, u.remark, "
+	    		+ "   s.id, s.name "
+	    		+ "FROM "
+	    		+ "choose_records c "
+	    		+ "left join courses u on c.courseid = u.id "
 	    		+ "left join students s on c.studentid = s.id";
         
 	    RowMapper<ChooseRecordsDto> mapper = new RowMapper<ChooseRecordsDto>() {

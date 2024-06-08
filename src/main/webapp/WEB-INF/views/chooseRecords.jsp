@@ -5,11 +5,12 @@
 <html>
 <head>
     <title>選課紀錄列表</title>
+     
 </head>
 <body>
     <h2>選課紀錄列表</h2>
     
-    ${ courses }
+    ${ course }
     <a href="${pageContext.request.contextPath}/chooseRecords/new">新增選課紀錄</a>
     <table border="1">
         <thead>
@@ -24,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <c:forEach var="chooseRecord" items="${ chooseRecords }">
+            <c:forEach var="chooseRecord" items="${ chooseRecordsDtos }">
                 <tr>
                     <td>${chooseRecord.id}</td>
                     <td>${chooseRecord.studentid}</td>

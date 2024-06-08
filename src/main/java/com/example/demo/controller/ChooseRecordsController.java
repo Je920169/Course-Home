@@ -29,20 +29,10 @@ public class ChooseRecordsController {
     							Model model) {
         List<ChooseRecordsDto> chooseRecordsDtos = chooseRecordsService.findAllChooseRecords();
         List<Courses> course = chooseRecordsService.findAllCourses();
-        model.addAttribute("chooseRecords", chooseRecords);
-        model.addAttribute("courses", courses);
+        model.addAttribute("chooseRecordsDtos", chooseRecordsDtos);
+        model.addAttribute("course", course);
     	return "chooseRecords";
     }
-    
-    /* 待處理
-    @GetMapping
-    public String Courses(@ModelAttribute Courses courses, Model model) {
-        List<Courses> courses = chooseRecordsService.findAllCourses();
-        model.addAttribute("courses", courses);
- 
-    	return "chooseRecords";
-    }
-    */
     
 
     @GetMapping("/{id}")

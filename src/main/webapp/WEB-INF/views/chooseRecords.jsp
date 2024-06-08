@@ -10,6 +10,7 @@
 <body>
     <h2>選課紀錄列表</h2>
     
+    
     ${ course }
     <a href="${pageContext.request.contextPath}/chooseRecords/new">新增選課紀錄</a>
     <table border="1">

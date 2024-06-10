@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.model.dto.ChooseRecordsDto;
 import com.example.demo.model.po.ChooseRecords;
 import com.example.demo.model.po.Courses;
+import com.example.demo.model.po.Students;
 import com.example.demo.service.ChooseRecordsService;
+import com.example.demo.service.StudentsService;
 
 @Controller
 @RequestMapping("/chooseRecords")
@@ -22,15 +24,21 @@ public class ChooseRecordsController {
 
     @Autowired
     private ChooseRecordsService chooseRecordsService;
+    
+    @Autowired
+    private StudentsService studentsService;
 
     @GetMapping
     public String chooseRecords(@ModelAttribute ChooseRecords chooseRecords, 
     							@ModelAttribute Courses courses,
+    							@ModelAttribute Students students,
     							Model model) {
         List<ChooseRecordsDto> chooseRecordsDtos = chooseRecordsService.findAllChooseRecords();
         List<Courses> course = chooseRecordsService.findAllCourses();
+        List<Students> student = studentsService.findAllStudents();
         model.addAttribute("chooseRecordsDtos", chooseRecordsDtos);
         model.addAttribute("course", course);
+        model.addAttribute("student", student);
     	return "chooseRecords";
     }
     

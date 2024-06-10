@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	${ student }
     <title>選課紀錄列表</title>
      
 </head>
